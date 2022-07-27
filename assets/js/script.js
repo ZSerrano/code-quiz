@@ -1,12 +1,45 @@
 // Code Quiz Pseudocode
 
-// Home screen with title, explanation of rules, and start button.
+var startPress = document.querySelector('.startButton');
+var startPage = document.querySelector('.start-page');
+
+var question1 = "Commonly used data types DO NOT include:";
+var choices1 = ["strings", "booleans", "alerts", "numbers"];
+var answer1 = "alerts";
+
+var question2 = "The condition in an if/else statement is enclosed within _____.";
+var choices2 = ['quotes', 'curly brackets', 'parentheses', 'square brackets'];
+var answer2 = 'parentheses';
+
+var question3 = 'Arrays in Javascript can be used to store ____.';
+var choices3 = ['numbers and strings', 'other arrays', 'booleans', 'all of the above'];
+var answer3 = 'all of the above';
+
+var question4 = 'String values must be enclosed within ____ when being assigned to variables.';
+var choices4 = ['commas', 'curly brackets', 'quotes', 'parentheses'];
+var answer4 = 'quotes';
+
+var question5 = 'A very useful tool used during development and debugging for printing content to the debugger is:';
+var choices5 = ['Javascript', 'terminal/bash', 'for loops', 'console.log'];
+var answer5 = 'console.log';
 
 // Timer towards the corner starts upon clicking start. Title screen is hidden
 // and first question appears along with four buttons for different answers.
+startPress.addEventListener('click', function() {
+    quizStart();
+})
+
+function quizStart() {
+    startPage.setAttribute('class', 'hide');
+    
+}
+
 
 // Each button pushes through to the following screen with a new question 
 // and a new set of answers.
+
+
+
 
 // If a given answer is correct, the user is notified and a current score is in another corner of the screen
 // is increased by a specified increment.  
