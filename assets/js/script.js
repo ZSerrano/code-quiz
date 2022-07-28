@@ -1,7 +1,3 @@
-// Code Quiz Pseudocode
-
-var startPress = document.querySelector('.startButton');
-var startPage = document.querySelector('.start-page');
 
 var question1 = "Commonly used data types DO NOT include:";
 var choices1 = ["strings", "booleans", "alerts", "numbers"];
@@ -23,20 +19,60 @@ var question5 = 'A very useful tool used during development and debugging for pr
 var choices5 = ['Javascript', 'terminal/bash', 'for loops', 'console.log'];
 var answer5 = 'console.log';
 
-// Timer towards the corner starts upon clicking start. Title screen is hidden
-// and first question appears along with four buttons for different answers.
+var startPress = document.querySelector('.startButton');
+var startPage = document.querySelector('.start-page');
+
+console.log(choices5);
+
 startPress.addEventListener('click', function() {
     quizStart();
 })
 
 function quizStart() {
+    // Timer towards the corner starts upon clicking start. Title screen is hidden
+    // and first question appears along with four buttons for different answers.
     startPage.setAttribute('class', 'hide');
+    choiceBlock1.removeAttribute('class');
     
 }
 
+function createButton (item) {
+    var choiceButton = document.createElement('button');
+    choiceButton.setAttribute('class', 'buttons');
+    choiceButton.setAttribute('value', item);
+    choiceButton.textContent = item;
+}
+
+var firstq = document.createElement('h3');
+firstq.textContent = question1;
+firstq.setAttribute('class', 'h3');
+// choices1.forEach(createButton());
+var choiceBlock1 = document.createElement('div');
+choiceBlock1.setAttribute('class', 'hide');
+choiceBlock1.append(firstq);
+choiceBlock1.append(choices1);
+choices1.onclick = questionOneClicked;
 
 // Each button pushes through to the following screen with a new question 
 // and a new set of answers.
+
+function questionOneClicked() {
+    if (this.value !== answer1) {
+        // decrement time
+        choiceBlock1.setAttribute('class', 'hide');
+        choiceBlock2.removeAttribute('class');
+    } else {
+        choiceBlock1.setAttribute('class', 'hide');
+        choiceBlock2.removeAttribute('class');
+    }
+}
+
+console.log(choices1);
+
+
+
+
+
 
 
 

@@ -1,0 +1,59 @@
+body {
+
+}
+
+header {
+
+}
+
+main {
+
+}
+
+section {
+
+}
+
+h2 {
+
+}
+
+h3 {
+    display: block; 
+}
+
+.highscoreButton {
+    
+}
+
+.start-page {
+
+}
+
+
+
+.title {
+    color: red;
+}
+
+.instructions {
+
+}
+
+.startButton {
+
+}
+
+.hide {
+    display: none;
+}
+
+.buttons {
+    display: block;
+    width: 40px;
+    height: 20px;
+    border-style: solid;
+    border-width: 2px;
+    color: white;
+    background-color: blue;
+}
