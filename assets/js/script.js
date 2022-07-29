@@ -21,6 +21,9 @@ var answer5 = 'console.log';
 
 var startPress = document.querySelector('.startButton');
 var startPage = document.querySelector('.start-page');
+var quizSection = document.querySelector('#quiz-section');
+
+var choiceBlock1 = document.createElement('div');
 
 console.log(choices5);
 
@@ -36,28 +39,55 @@ function quizStart() {
     
 }
 
-function createButton (item) {
+
+function createButton (item, choiceBlock) {
     var choiceButton = document.createElement('button');
     choiceButton.setAttribute('class', 'buttons');
     choiceButton.setAttribute('value', item);
     choiceButton.textContent = item;
+    choiceButton.addEventListener('click', function() {
+        
+        console.log(this);
+        switch(choiceBlock) {
+            case 1:
+              questionOneClicked(this);
+              break;
+            case 2:
+              // code block
+              break;
+          }
+    })
+    switch(choiceBlock) {
+        case 1:
+          choiceBlock1.append(choiceButton)
+          break;
+        case 2:
+          // code block
+          break;
+      }
 }
 
 var firstq = document.createElement('h3');
+
 firstq.textContent = question1;
 firstq.setAttribute('class', 'h3');
-// choices1.forEach(createButton());
-var choiceBlock1 = document.createElement('div');
-choiceBlock1.setAttribute('class', 'hide');
 choiceBlock1.append(firstq);
-choiceBlock1.append(choices1);
+choices1.forEach(function(currentValue){
+    createButton(currentValue, 1)
+});
+
+choiceBlock1.setAttribute('class', 'hide');
+
+
 choices1.onclick = questionOneClicked;
 
+quizSection.append(choiceBlock1);
 // Each button pushes through to the following screen with a new question 
 // and a new set of answers.
 
-function questionOneClicked() {
-    if (this.value !== answer1) {
+function questionOneClicked(buttonElement) {
+    console.log(buttonElement.value);
+    if (buttonElement.value !== answer1) {
         // decrement time
         choiceBlock1.setAttribute('class', 'hide');
         choiceBlock2.removeAttribute('class');
@@ -68,14 +98,6 @@ function questionOneClicked() {
 }
 
 console.log(choices1);
-
-
-
-
-
-
-
-
 
 // If a given answer is correct, the user is notified and a current score is in another corner of the screen
 // is increased by a specified increment.  
