@@ -24,21 +24,20 @@ var startPage = document.querySelector('.start-page');
 var quizSection = document.querySelector('#quiz-section');
 
 var choiceBlock1 = document.createElement('div');
+var choiceBlock2 = document.createElement('div');
+var choiceBlock3 = document.createElement('div');
+var choiceBlock4 = document.createElement('div');
+var choiceBlock5 = document.createElement('div');
 
-console.log(choices5);
 
 startPress.addEventListener('click', function() {
     quizStart();
 })
 
 function quizStart() {
-    // Timer towards the corner starts upon clicking start. Title screen is hidden
-    // and first question appears along with four buttons for different answers.
     startPage.setAttribute('class', 'hide');
     choiceBlock1.removeAttribute('class');
-    
 }
-
 
 function createButton (item, choiceBlock) {
     var choiceButton = document.createElement('button');
@@ -46,14 +45,22 @@ function createButton (item, choiceBlock) {
     choiceButton.setAttribute('value', item);
     choiceButton.textContent = item;
     choiceButton.addEventListener('click', function() {
-        
         console.log(this);
         switch(choiceBlock) {
             case 1:
               questionOneClicked(this);
               break;
             case 2:
-              // code block
+              questionTwoClicked(this);
+              break;
+            case 3:
+              questionThreeClicked(this);
+              break;
+            case 4: 
+              questionFourClicked(this);
+              break;
+            case 5:
+              questionFiveClicked(this);
               break;
           }
     })
@@ -62,13 +69,21 @@ function createButton (item, choiceBlock) {
           choiceBlock1.append(choiceButton)
           break;
         case 2:
-          // code block
+          choiceBlock2.append(choiceButton)
+          break;
+        case 3:
+          choiceBlock3.append(choiceButton)
+          break;
+        case 4:
+          choiceBlock4.append(choiceButton)
+          break;
+        case 5:
+          choiceBlock5.append(choiceButton)
           break;
       }
 }
 
 var firstq = document.createElement('h3');
-
 firstq.textContent = question1;
 firstq.setAttribute('class', 'h3');
 choiceBlock1.append(firstq);
@@ -77,14 +92,9 @@ choices1.forEach(function(currentValue){
 });
 
 choiceBlock1.setAttribute('class', 'hide');
-
-
-choices1.onclick = questionOneClicked;
-
 quizSection.append(choiceBlock1);
 // Each button pushes through to the following screen with a new question 
 // and a new set of answers.
-
 function questionOneClicked(buttonElement) {
     console.log(buttonElement.value);
     if (buttonElement.value !== answer1) {
@@ -97,7 +107,109 @@ function questionOneClicked(buttonElement) {
     }
 }
 
-console.log(choices1);
+
+var secondq = document.createElement('h3');
+secondq.textContent = question2;
+secondq.setAttribute('class', 'h3');
+choiceBlock2.append(secondq);
+choices2.forEach(function(currentValue){
+    createButton(currentValue, 2)
+});
+
+choiceBlock2.setAttribute('class', 'hide');
+quizSection.append(choiceBlock2);
+// Each button pushes through to the following screen with a new question 
+// and a new set of answers.
+function questionTwoClicked(buttonElement) {
+    console.log(buttonElement.value);
+    if (buttonElement.value !== answer2) {
+        // decrement time
+        choiceBlock2.setAttribute('class', 'hide');
+        choiceBlock3.removeAttribute('class');
+    } else {
+        choiceBlock2.setAttribute('class', 'hide');
+        choiceBlock3.removeAttribute('class');
+    }
+}
+
+
+var thirdq = document.createElement('h3');
+thirdq.textContent = question3;
+thirdq.setAttribute('class', 'h3');
+choiceBlock3.append(thirdq);
+choices3.forEach(function(currentValue){
+    createButton(currentValue, 3)
+});
+
+choiceBlock3.setAttribute('class', 'hide');
+quizSection.append(choiceBlock3);
+// Each button pushes through to the following screen with a new question 
+// and a new set of answers.
+function questionThreeClicked(buttonElement) {
+    console.log(buttonElement.value);
+    if (buttonElement.value !== answer3) {
+        // decrement time
+        choiceBlock3.setAttribute('class', 'hide');
+        choiceBlock4.removeAttribute('class');
+    } else {
+        choiceBlock3.setAttribute('class', 'hide');
+        choiceBlock4.removeAttribute('class');
+    }
+}
+
+
+var fourthq = document.createElement('h3');
+fourthq.textContent = question4;
+fourthq.setAttribute('class', 'h3');
+choiceBlock4.append(fourthq);
+choices4.forEach(function(currentValue){
+    createButton(currentValue, 4)
+});
+
+choiceBlock4.setAttribute('class', 'hide');
+quizSection.append(choiceBlock4);
+// Each button pushes through to the following screen with a new question 
+// and a new set of answers.
+function questionFourClicked(buttonElement) {
+    console.log(buttonElement.value);
+    if (buttonElement.value !== answer4) {
+        // decrement time
+        choiceBlock4.setAttribute('class', 'hide');
+        choiceBlock5.removeAttribute('class');
+    } else {
+        choiceBlock4.setAttribute('class', 'hide');
+        choiceBlock5.removeAttribute('class');
+    }
+}
+
+
+var fifthq = document.createElement('h3');
+fifthq.textContent = question5;
+fifthq.setAttribute('class', 'h3');
+choiceBlock5.append(fifthq);
+choices5.forEach(function(currentValue){
+    createButton(currentValue, 5)
+});
+
+choiceBlock5.setAttribute('class', 'hide');
+quizSection.append(choiceBlock5);
+// Each button pushes through to the following screen with a new question 
+// and a new set of answers.
+function questionFiveClicked(buttonElement) {
+    console.log(buttonElement.value);
+    if (buttonElement.value !== answer5) {
+        // decrement time
+        choiceBlock5.setAttribute('class', 'hide');
+        // choiceBlock5.removeAttribute('class');
+    } else {
+        choiceBlock5.setAttribute('class', 'hide');
+        // choiceBlock5.removeAttribute('class');
+    }
+}
+
+
+
+
 
 // If a given answer is correct, the user is notified and a current score is in another corner of the screen
 // is increased by a specified increment.  
