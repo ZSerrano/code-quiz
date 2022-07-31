@@ -22,6 +22,7 @@ var answer5 = 'console.log';
 var startPress = document.querySelector('.startButton');
 var startPage = document.querySelector('.start-page');
 var quizSection = document.querySelector('#quiz-section');
+var startTime = 30;
 
 var choiceBlock1 = document.createElement('div');
 var choiceBlock2 = document.createElement('div');
