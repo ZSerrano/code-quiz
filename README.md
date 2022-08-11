@@ -4,7 +4,7 @@
 
 
 ## Screenshot of Deployed Website
-![Image shows a homepage that introduces the coding quiz and gives instructions on how to begin.]()
+![Image shows a homepage that introduces the coding quiz and gives instructions on how to begin.](./assets/images/codequizss.png)
 
 ## Description
 Created a functioning code quiz that runs through a set of code-related questions and moves on to a new question once an answer is chosen.  
