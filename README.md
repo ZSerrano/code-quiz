@@ -1,7 +1,7 @@
 # Module 4 Challenge
 
 ## Deployed Link
-
+https://zserrano.github.io/code-quiz/
 
 ## Screenshot of Deployed Website
 ![Image shows a homepage that introduces the coding quiz and gives instructions on how to begin.](./assets/images/codequizss.png)
